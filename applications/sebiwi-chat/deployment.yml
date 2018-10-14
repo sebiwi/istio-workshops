@@ -1,0 +1,20 @@
+# sebiwi-chat/deployment.yml
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sebiwi-chat
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sebiwi-chat
+        version: v1
+    spec:
+      containers:
+      - image: sebiwi/sebiwi-chat
+        imagePullPolicy: IfNotPresent
+        name: sebiwi-chat
+        ports:
+        - containerPort: 8080

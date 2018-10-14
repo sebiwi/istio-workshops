@@ -1,0 +1,14 @@
+# sebiwi-chat/service.yml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sebiwi-chat
+  labels:
+    app: sebiwi-chat
+spec:
+  ports:
+  - name: http
+    port: 8080
+  selector:
+    app: sebiwi-chat
